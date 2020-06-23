@@ -16,7 +16,7 @@ public class Rook extends Piece {
         // backward, or sideways without jumping any pieces. 
         
         // We check the square we want to move to and see if there is
-        // a piece occupying it. We then initialize a Piece object
+        // a piec  0ccupying it. We then initialize a Piece object
         
         Piece potentialPiece = board.getPiece(destination_x, destination_y);
         

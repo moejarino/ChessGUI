@@ -40,11 +40,6 @@ public class Queen extends Piece {
             return false;
         }
         
-//        // Check if queen is attempting to move diagonally
-//        if (this.getX() != destination_x && this.getY() != destination_y) {
-//            
-//            return false;
-//        }
         
         String direction = "";
                 
