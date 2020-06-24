@@ -60,19 +60,16 @@ public class Queen extends Piece {
         }
         
         // y increasing, x decreasing
-        // && destination_y - this.getY() == this.getX() - destination_x
         if (destination_y > this.getY() && destination_x < this.getX()) {
             direction = "southwest";
         }
         
         // y increasing, x increasing
-        //&& destination_y - this.getY() == destination_x - this.getX()
         if (destination_y > this.getY() && destination_x > this.getX()) {
             direction = "southeast";
         }
         
         // y decreasing, x decreasing
-        // && this.getY() - destination_y  == this.getX() - destination_x
         if (destination_y < this.getY() && destination_x < this.getX()) {
             direction = "northwest";
         }

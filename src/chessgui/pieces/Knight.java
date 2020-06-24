@@ -12,20 +12,39 @@ public class Knight extends Piece {
     @Override
     public boolean canMove(int destination_x, int destination_y)
     {
-        // Remember: a knight can move in any L shape and can jump over anyone
+        // A knight can move in any L shape and can jump over anyone
         // in order to do so. He cannot attack his own pieces.
-        // By an L shape, I mean it can move to a square that is 2 squares away
-        // horizontally and 1 square away vertically, or 1 square away horizontally
-        // and 2 squares away vertically.
-        // some examples:
-        //
-        //  * *       * * *           *       *
-        //  *             *       * * *       *
-        //  *                                 * *
-            
-                // WRITE CODE HERE
-        
-        
-        return true;
+ 
+        Piece potentialPiece = board.getPiece(destination_x, destination_y);
+
+        // If there is a piece there
+        if (potentialPiece != null) {
+
+            // Are they both white?
+            if (potentialPiece.isWhite() && this.isWhite()) {
+                return false;
+            }
+            // Are they both black?
+            if (potentialPiece.isBlack() && this.isBlack()) {
+                return false;
+            }
+        }
+
+        //  * *             *
+        //  *               *
+        //  *               * *
+        // Checking for these moves
+        if (Math.abs(destination_y - this.getY()) == 2 && Math.abs(destination_x - this.getX()) == 1) {
+            return true;
+        }
+
+        //       * * *           *       
+        //           *       * * *       
+        // Checking for these moves
+        if (Math.abs(destination_y - this.getY()) == 1 && Math.abs(destination_x - this.getX()) == 2) {
+            return true;
+        }
+
+        return false;
     }
 }
